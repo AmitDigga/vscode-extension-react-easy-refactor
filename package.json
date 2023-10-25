@@ -1,0 +1,76 @@
+{
+  "name": "react-easy-refactor",
+  "displayName": "react-easy-refactor",
+  "description": "It replaces all inline styles with main referenced styles.",
+  "version": "0.9.4",
+  "publisher": "AmitDigga",
+  "engines": {
+    "vscode": "^1.77.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:typescriptreact",
+    "onLanguage:javascriptreact"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "title": "Move Styles to Constant",
+        "shortTitle": "Move Styles to Constant",
+        "command": "react-easy-refactor.move-all-styles-to-constant",
+        "category": "React Easy Refactor"
+      },
+      {
+        "title": "Rename Styles",
+        "shortTitle": "Rename Styles",
+        "command": "react-easy-refactor.rename-auto-generated-styles",
+        "category": "React Easy Refactor"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.21.5",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.77.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.5",
+    "@babel/generator": "^7.21.5",
+    "@babel/plugin-syntax-jsx": "^7.21.4",
+    "@babel/plugin-transform-typescript": "^7.21.3",
+    "@babel/traverse": "^7.21.5",
+    "@types/babel__core": "^7.20.0",
+    "@types/babel__generator": "^7.6.4",
+    "@types/babel__traverse": "^7.18.5",
+    "@types/chai": "^4.3.5",
+    "@types/sinon": "^10.0.14",
+    "chai": "^4.3.7",
+    "sinon": "^15.0.4"
+  }
+}
