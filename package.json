@@ -4,6 +4,9 @@
   "description": "It replaces all inline styles with main referenced styles.",
   "version": "0.9.4",
   "publisher": "AmitDigga",
+  "author": {
+    "name": "Amit Digga"
+  },
   "engines": {
     "vscode": "^1.77.0"
   },
